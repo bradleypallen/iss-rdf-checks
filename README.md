@@ -32,6 +32,9 @@ notebooks/
                              sides with every intermediate object printed: ground graphs, a blank
                              node in H, a blank node in G (the Skolem instance decides), an
                              incoherent G (Proposition 2). Executed outputs are committed.
+  02_make_it_fail.ipynb      The controls: the Corollary 3 slip, a non-uniform regime, and owlrl
+                             with an undersized V; each hypothesis removed, the disagreement
+                             shown with its reason, and agreement restored.
 checks/
   generate.py                Random regimes and graphs for the randomized checks.
   pruning.py                 The two monotonicity prunings (the only borrowed reasoning).

@@ -1,0 +1,16 @@
+undersized-V search: seed 1, 120 OWL cases, V_hand = 62 IRIs, V_full = 103 IRIs
+case 57: MISMATCH under V_hand: semantics False, rules True; under V_full: semantics True, rules True
+   G = {(b, disjointWith, SymmetricProperty)}
+   H = {(b, disjointWith, SymmetricProperty), (deprecated, type, _:y)}
+   minimized: G = ∅  H = {(deprecated, type, _:y)}  |G|+|H| = 1
+   minimized verdicts: V_hand semantics False rules True; V_full semantics True rules True
+summary: 1 mismatches in 120 cases, 71s
+smallest: |G|+|H| = 1: G = ∅  H = {(deprecated, type, _:y)}
+hand-written candidates (G = ∅ unless stated), from the closure of the empty graph:
+  H = {(_:y, type, AnnotationProperty)}        V_hand: semantics True  rules True    V_full: semantics True  rules True 
+  H = {(_:y, type, Datatype)}                  V_hand: semantics True  rules True    V_full: semantics True  rules True 
+  H = {(string, type, _:y)}                    V_hand: semantics True  rules True    V_full: semantics True  rules True 
+  H = {(_:y, sameAs, _:y)}                     V_hand: semantics True  rules True    V_full: semantics True  rules True 
+  H = {(deprecated, type, _:y)}                V_hand: semantics False rules True    V_full: semantics True  rules True 
+witnesses in the closure of ∅ for (?, type, AnnotationProperty): ['backwardCompatibleWith', 'comment', 'deprecated', 'incompatibleWith', 'isDefinedBy', 'label', 'priorVersion', 'seeAlso', 'versionInfo']
+witnesses in the closure of ∅ for (?, type, Datatype), in V_hand: ['Literal']

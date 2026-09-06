@@ -157,6 +157,19 @@ table (both sides, both configurations) followed by the explanation.
   owlrl is not installed.
 - Last cell writes `results/make_it_fail.txt`.
 
+Outcome (6 Sept 2026): `notebooks/02_make_it_fail.ipynb`, 10 cells, six
+verdict rows (1a/1b, 2/2', 3 hand-listed V / 3 V_full); the three
+disagreements are in the predicted directions and each restored hypothesis
+restores agreement. Section 2 also prints the failing instance of Lemma 6.
+The RDFS profile adds nothing to the empty graph, so the undersized-V
+failure is OWL-only; the search (`results/undersized_V_search.txt`, 120
+cases, 1 mismatch) minimized to G = ∅, H = {(owl:deprecated, type, _:y)},
+whose witness owl:AnnotationProperty is outside the hand list. The
+natural-looking variants ("something is an AnnotationProperty / Datatype")
+agree because the hand list happens to contain a witness. Executed outputs
+identical across hash seeds; passes nbmake; the owlrl section prints a skip
+line under a Python without owlrl (tested).
+
 ## 4. Tests and CI
 
 - `tests/test_examples.py`: tweety entails; clash is incoherent; Cor. 3

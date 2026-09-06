@@ -1,0 +1,7 @@
+1a: Cor. 3 example, all instances        semantics True   rules True   agree
+1b: Cor. 3 example, instances over N only semantics True   rules False  DISAGREE
+2: non-uniform regime                    semantics False  rules True   DISAGREE
+2': same rule, uniform                   semantics True   rules True   agree
+3: owlrl, hand-listed V                  semantics False  rules True   DISAGREE
+3: owlrl, V_full                         semantics True   rules True   agree
+summary: 6 rows, 3 disagreements, all as predicted
