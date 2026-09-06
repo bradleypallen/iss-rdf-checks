@@ -1,0 +1,75 @@
+single[0] BOT: pairs 29584, entail 22078, inconsistent G 126/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[1] ('X', 'X', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[2] ('X', 'X', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[3] ('X', 'X', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[4] ('X', 'X', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[5] ('X', 'Y', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[6] ('X', 'Y', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[7] ('X', 'Y', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[8] ('X', 'Y', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[9] ('X', 'p', 'X'): pairs 29584, entail 2792, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[10] ('X', 'p', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[11] ('X', 'p', 'p'): pairs 29584, entail 1739, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[12] ('X', 'p', 'q'): pairs 29584, entail 1739, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[13] ('X', 'q', 'X'): pairs 29584, entail 3859, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[14] ('X', 'q', 'Y'): pairs 29584, entail 3415, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[15] ('X', 'q', 'p'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[16] ('X', 'q', 'q'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[17] ('Y', 'X', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[18] ('Y', 'X', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[19] ('Y', 'X', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[20] ('Y', 'X', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[21] ('Y', 'Y', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[22] ('Y', 'Y', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[23] ('Y', 'Y', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[24] ('Y', 'Y', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[25] ('Y', 'p', 'X'): pairs 29584, entail 2389, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[26] ('Y', 'p', 'Y'): pairs 29584, entail 2792, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[27] ('Y', 'p', 'p'): pairs 29584, entail 2045, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[28] ('Y', 'p', 'q'): pairs 29584, entail 2045, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[29] ('Y', 'q', 'X'): pairs 29584, entail 3415, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[30] ('Y', 'q', 'Y'): pairs 29584, entail 3859, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[31] ('Y', 'q', 'p'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[32] ('Y', 'q', 'q'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[33] ('p', 'X', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[34] ('p', 'X', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[35] ('p', 'X', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[36] ('p', 'X', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[37] ('p', 'Y', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[38] ('p', 'Y', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[39] ('p', 'Y', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[40] ('p', 'Y', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[41] ('p', 'p', 'X'): pairs 29584, entail 2045, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[42] ('p', 'p', 'Y'): pairs 29584, entail 1739, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[43] ('p', 'p', 'p'): pairs 29584, entail 1862, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[44] ('p', 'p', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[45] ('p', 'q', 'X'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[46] ('p', 'q', 'Y'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[47] ('p', 'q', 'p'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[48] ('p', 'q', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[49] ('q', 'X', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[50] ('q', 'X', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[51] ('q', 'X', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[52] ('q', 'X', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[53] ('q', 'Y', 'X'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[54] ('q', 'Y', 'Y'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[55] ('q', 'Y', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[56] ('q', 'Y', 'q'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[57] ('q', 'p', 'X'): pairs 29584, entail 2045, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[58] ('q', 'p', 'Y'): pairs 29584, entail 1739, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[59] ('q', 'p', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[60] ('q', 'p', 'q'): pairs 29584, entail 1862, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[61] ('q', 'q', 'X'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[62] ('q', 'q', 'Y'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[63] ('q', 'q', 'p'): pairs 29584, entail 1733, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+single[64] ('q', 'q', 'q'): pairs 29584, entail 1910, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+trans+bot: pairs 29584, entail 10296, inconsistent G 54/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+rdfs-like: pairs 29584, entail 1919, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+sym+irrefl: pairs 29584, entail 10342, inconsistent G 51/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+disjoint: pairs 29584, entail 3415, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+axiom+bot: pairs 29584, entail 1944, inconsistent G 0/172, thm2 mismatches 0, prop2 mismatches 0, 1s
+TOTAL mismatches thm2/prop2: [0, 0]
+
+real	0m47.435s
+user	0m47.399s
+sys	0m0.012s

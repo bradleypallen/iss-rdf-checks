@@ -1,0 +1,23 @@
+[OWL seed 2] {'cases': 10, 'entail': 9, 'inconsistent': 3, 'bnG': 5, 'bnH': 6, 'mismatch': 0} 15s
+[OWL seed 2] {'cases': 20, 'entail': 19, 'inconsistent': 6, 'bnG': 13, 'bnH': 11, 'mismatch': 0} 36s
+[OWL seed 2] {'cases': 30, 'entail': 29, 'inconsistent': 9, 'bnG': 22, 'bnH': 14, 'mismatch': 0} 61s
+TIMEOUT [(rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#FunctionalProperty')), (rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subClassOf'), rdflib.term.URIRef('http://ex.org/p')), (rdflib.term.URIRef('http://ex.org/a'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#Nothing')), (rdflib.term.URIRef('http://ex.org/b'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subClassOf'), rdflib.term.URIRef('http://ex.org/p')), (rdflib.term.URIRef('http://ex.org/q'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#equivalentClass'), rdflib.term.URIRef('http://ex.org/C'))] [(rdflib.term.URIRef('http://ex.org/D'), rdflib.term.URIRef('http://ex.org/q'), rdflib.term.URIRef('http://ex.org/b')), (rdflib.term.URIRef('http://ex.org/D'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#AsymmetricProperty'))]
+[OWL seed 2] {'cases': 39, 'entail': 35, 'inconsistent': 13, 'bnG': 30, 'bnH': 16, 'mismatch': 0, 'timeout': 1} 106s
+[OWL seed 2] {'cases': 49, 'entail': 44, 'inconsistent': 18, 'bnG': 37, 'bnH': 19, 'mismatch': 0, 'timeout': 1} 123s
+[OWL seed 2] {'cases': 59, 'entail': 50, 'inconsistent': 20, 'bnG': 45, 'bnH': 23, 'mismatch': 0, 'timeout': 1} 136s
+[OWL seed 2] {'cases': 69, 'entail': 57, 'inconsistent': 23, 'bnG': 54, 'bnH': 29, 'mismatch': 0, 'timeout': 1} 154s
+[OWL seed 2] {'cases': 79, 'entail': 66, 'inconsistent': 25, 'bnG': 60, 'bnH': 33, 'mismatch': 0, 'timeout': 1} 170s
+[OWL seed 2] {'cases': 89, 'entail': 74, 'inconsistent': 27, 'bnG': 66, 'bnH': 40, 'mismatch': 0, 'timeout': 1} 181s
+[OWL seed 2] {'cases': 99, 'entail': 80, 'inconsistent': 29, 'bnG': 73, 'bnH': 44, 'mismatch': 0, 'timeout': 1} 192s
+[OWL seed 2] {'cases': 109, 'entail': 89, 'inconsistent': 32, 'bnG': 80, 'bnH': 48, 'mismatch': 0, 'timeout': 1} 209s
+[OWL seed 2] {'cases': 119, 'entail': 96, 'inconsistent': 36, 'bnG': 90, 'bnH': 50, 'mismatch': 0, 'timeout': 1} 228s
+[OWL seed 2] {'cases': 129, 'entail': 105, 'inconsistent': 42, 'bnG': 96, 'bnH': 54, 'mismatch': 0, 'timeout': 1} 242s
+[OWL seed 2] {'cases': 139, 'entail': 109, 'inconsistent': 44, 'bnG': 101, 'bnH': 58, 'mismatch': 0, 'timeout': 1} 250s
+[OWL seed 2] {'cases': 148, 'entail': 116, 'inconsistent': 47, 'bnG': 107, 'bnH': 63, 'mismatch': 0, 'timeout': 1, 'owlrl_crash': 1} 266s
+[OWL seed 2] {'cases': 158, 'entail': 123, 'inconsistent': 50, 'bnG': 113, 'bnH': 69, 'mismatch': 0, 'timeout': 1, 'owlrl_crash': 1} 281s
+TIMEOUT [(rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#domain'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#FunctionalProperty')), (rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#subPropertyOf'), rdflib.term.BNode('x')), (rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#propertyDisjointWith'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#FunctionalProperty')), (rdflib.term.URIRef('http://ex.org/C'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#differentFrom'), rdflib.term.URIRef('http://ex.org/D'))] [(rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#float'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#Datatype'))]
+[OWL seed 2] {'cases': 167, 'entail': 131, 'inconsistent': 54, 'bnG': 122, 'bnH': 72, 'mismatch': 0, 'timeout': 2, 'owlrl_crash': 1} 335s
+[OWL seed 2] {'cases': 177, 'entail': 138, 'inconsistent': 57, 'bnG': 130, 'bnH': 76, 'mismatch': 0, 'timeout': 2, 'owlrl_crash': 1} 348s
+[OWL seed 2] {'cases': 187, 'entail': 147, 'inconsistent': 62, 'bnG': 138, 'bnH': 83, 'mismatch': 0, 'timeout': 2, 'owlrl_crash': 1} 367s
+[OWL seed 2] {'cases': 197, 'entail': 156, 'inconsistent': 67, 'bnG': 145, 'bnH': 88, 'mismatch': 0, 'timeout': 2, 'owlrl_crash': 1} 386s
+DONE {'cases': 197, 'entail': 156, 'inconsistent': 67, 'bnG': 145, 'bnH': 88, 'mismatch': 0, 'timeout': 2, 'owlrl_crash': 1}

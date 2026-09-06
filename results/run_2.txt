@@ -1,0 +1,22 @@
+Lemma 2 on random 3-bearer frames: 0 failures
+
+cases              1000
+entail             419
+inconsistent       104
+bn_G               710
+bn_H               612
+mismatch_thm2      0
+mismatch_prop2     0
+overN_cases        710
+overN_mismatch     26
+nonunif_cases      710
+nonunif_mismatch   19
+
+example overN: ISS=True Def4=False
+  R=(((('X', 'Z', 'X'),), ('p', 'Z', 'X')), ((('Z', 'Z', 'p'), ('Z', 'Y', 'Y')), ('q', 'Y', 'Z')), ((('p', 'q', 'Y'), ('Z', 'Z', 'q')), ('Z', 'Y', 'Y')), ((('Y', 'p', 'X'),), 'BOT'), ((('Z', 'p', 'Y'),), 'BOT'))
+  G=[('_x', 'a', 'b'), ('_x', 'p', '_x'), ('a', '_x', '_x')]
+  H=[('_y', 'p', 'q'), ('p', 'a', 'p')]
+example nonunif: ISS=False Def4=True
+  R=(((('q', 'Y', 'Z'), ('q', 'Y', 'X')), 'BOT'), ((('Y', 'X', 'Y'),), 'BOT'), ((('Z', 'Z', 'Y'),), ('p', 'Z', 'Z')), ((('p', 'Z', 'p'), ('X', 'q', 'X')), ('q', 'Z', 'X')), ((('Z', 'q', 'q'), ('Y', 'X', 'X')), ('Z', 'Y', 'Y')))
+  G=[('p', '_x', 'p'), ('p', 'b', 'a')]
+  H=[('_y', '_y', 'a')]

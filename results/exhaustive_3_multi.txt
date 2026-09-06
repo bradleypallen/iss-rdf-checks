@@ -1,0 +1,6 @@
+trans+bot: pairs 976144, entail 462173, inconsistent G 456/988, thm2 mismatches 0, prop2 mismatches 0, 138s
+rdfs-like: pairs 976144, entail 41354, inconsistent G 0/988, thm2 mismatches 0, prop2 mismatches 0, 46s
+sym+irrefl: pairs 976144, entail 429317, inconsistent G 412/988, thm2 mismatches 0, prop2 mismatches 0, 132s
+disjoint: pairs 976144, entail 81176, inconsistent G 0/988, thm2 mismatches 0, prop2 mismatches 0, 57s
+axiom+bot: pairs 976144, entail 29833, inconsistent G 0/988, thm2 mismatches 0, prop2 mismatches 0, 40s
+TOTAL mismatches thm2/prop2: [0, 0]

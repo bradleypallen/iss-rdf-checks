@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper it accompanies."
+title: "Machine checks for Implication-Space Semantics for RDF"
+authors:
+  - family-names: Allen
+    given-names: Bradley P.
+    affiliation: University of Amsterdam
+    email: b.p.allen@uva.nl
+date-released: 2026-09-06
+license: MIT

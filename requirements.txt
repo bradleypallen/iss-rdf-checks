@@ -1,0 +1,3 @@
+# Only needed for check_lemma1.py and check_owlrl.py
+rdflib>=7.0
+owlrl>=7.0

@@ -1,0 +1,1 @@
+seed 4: cases 4 (two-bnode G 4), entail 3, inconsistent 2, thm2 mismatches 0, prop2 mismatches 0

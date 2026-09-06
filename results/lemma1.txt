@@ -1,0 +1,1 @@
+seed 1: 3000 standard-graph pairs, 798 entailments, 3000 agreements, 0 mismatches

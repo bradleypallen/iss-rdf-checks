@@ -1,0 +1,1 @@
+seed 2: cases 1000, two 1000, entail 524, inconsistent 236, thm2 0, prop2 0, overN_cases 1000, overN 53

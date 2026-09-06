@@ -1,0 +1,22 @@
+Lemma 2 on random 3-bearer frames: 0 failures
+
+cases              1000
+entail             421
+inconsistent       146
+bn_G               678
+bn_H               645
+mismatch_thm2      0
+mismatch_prop2     0
+overN_cases        678
+overN_mismatch     22
+nonunif_cases      678
+nonunif_mismatch   19
+
+example overN: ISS=True Def4=False
+  R=(((('q', 'X', 'Y'),), 'BOT'), ((), ('p', 'p', 'q')))
+  G=[('_x', '_x', 'b'), ('_x', 'p', 'b'), ('q', 'a', '_x')]
+  H=[('a', 'b', 'b')]
+example nonunif: ISS=False Def4=True
+  R=(((), ('q', 'q', 'q')), ((('Y', 'Z', 'X'),), 'BOT'), ((('Z', 'q', 'Z'), ('Y', 'p', 'p')), ('q', 'p', 'q')))
+  G=[('a', 'q', '_x')]
+  H=[('_y', 'p', '_y'), ('p', '_y', 'b')]
