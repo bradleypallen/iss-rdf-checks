@@ -151,6 +151,7 @@ def run(seed, owl, n_cases):
         if (i + 1) % 10 == 0:
             print(f"[{'OWL' if owl else 'RDFS'} seed {seed}] {stats} {time.time()-t0:.0f}s", flush=True)
     print("DONE", stats, flush=True)
+    return stats
 
 if __name__ == '__main__':
     run(int(sys.argv[1]), sys.argv[2] == 'owl', int(sys.argv[3]))

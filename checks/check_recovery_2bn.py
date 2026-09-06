@@ -37,6 +37,7 @@ def run(seed, n_regimes=2, n_pairs=2):
                 mism2 += 1; print("PROPOSITION 2 MISMATCH", R, sorted(G), a, b)
     print(f"seed {seed}: cases {cases} (two-bnode G {two}), entail {ent}, inconsistent {inc}, "
           f"thm2 mismatches {mism}, prop2 mismatches {mism2}")
+    return dict(cases=cases, two=two, entail=ent, inconsistent=inc, thm2=mism, prop2=mism2)
 
 if __name__ == '__main__':
     run(int(sys.argv[1]) if len(sys.argv) > 1 else 1)

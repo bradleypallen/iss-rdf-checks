@@ -1,0 +1,6 @@
+# Only pytest configuration lives here; nothing is installed. The checks run
+# as scripts from checks/ and the notebooks from notebooks/ (see README).
+[tool.pytest.ini_options]
+pythonpath = [".", "checks"]
+testpaths = ["tests"]
+addopts = "-q"

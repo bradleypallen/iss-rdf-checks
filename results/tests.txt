@@ -1,0 +1,14 @@
+test_2bn_fast_small: check_recovery_2bn_fast seed 1, 40 cases: {'cases': 40, 'two': 40, 'entail': 18, 'inconsistent': 15, 'thm2': 0, 'prop2': 0, 'overN_cases': 40, 'overN': 4}
+test_N_independence: N-independence: 5 cases agree with one and two spare IRIs
+test_clash_is_incoherent: disjointWith clash: incoherent on both sides; consistent G is not; explosion
+test_corollary3_counterexample: Cor. 3 example: agrees under all instances, semantics True / rules False over N only
+test_exhaustive_multi_size2: check_exhaustive multi, size 2: 0 mismatches
+test_lemma1_vs_rdflib: check_lemma1 seed 1, 300 pairs: {'pairs': 300, 'entail': 75, 'agree': 300, 'mismatch': 0}
+test_lemma2_on_hand_built_frame: Lemma 2 exhaustive on a 2-bearer frame, 137 generating sets
+test_nabla_of_two_singleton_roles: nabla of two singleton roles is the three-pair set; Def. 10 shapes
+test_nonuniform_regime: non-uniform regime: rules True / semantics False; uniform version agrees
+test_owlrl_rdfs_small: check_owlrl seed 1 rdfs, 20 cases: {'cases': 20, 'entail': 14, 'inconsistent': 0, 'bnG': 11, 'bnH': 11, 'mismatch': 0}
+test_recovery_100_cases: check_recovery seed 1, 100 cases: {'cases': 100, 'entail': 44, 'inconsistent': 26, 'bn_G': 77, 'bn_H': 77, 'mismatch_thm2': 0, 'mismatch_prop2': 0, 'overN_cases': 77, 'overN_mismatch': 1, 'nonunif_cases': 77, 'nonunif_mismatch': 0}
+test_theorem1_two_bearers: check_theorem1 seed 1, 2 bearers: {'herb_yes': 113, 'checked': 28928, 'violations': 0}
+test_tweety_entails: tweety entails Flier, ground and blank-node H: both sides True
+summary: 13 test lines, exit status 0

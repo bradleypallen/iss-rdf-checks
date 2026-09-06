@@ -67,6 +67,7 @@ def run(seed, nbearers, n_bases=3, n_graphs=10):
                     print("THEOREM 1 VIOLATION", sorted(G), sorted(H), bm)
     print(f"seed {seed}, |B|={nbearers}: Herbrand-yes cases {herb_yes}, "
           f"(case, bearer map) checks {checked}, violations {viol}")
+    return dict(herb_yes=herb_yes, checked=checked, violations=viol)
 
 if __name__ == '__main__':
     run(int(sys.argv[1]), int(sys.argv[2]))

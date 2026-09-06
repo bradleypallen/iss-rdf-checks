@@ -189,6 +189,18 @@ line under a Python without owlrl (tested).
 - A second requirements file for the notebook and test toolchain, so
   `requirements.txt` keeps saying that the checks need only rdflib and owlrl.
 
+Outcome (6 Sept 2026): `tests/test_examples.py` (8 tests, including
+N-independence and an exhaustive Lemma 2 over all generating sets of at
+most two candidates on a 2-bearer frame) and `tests/test_quick.py` (6
+quick subsets, two of them skipping without rdflib/owlrl); 14 pass in ~5 s.
+`run()` in the check scripts now returns its statistics (logs unchanged,
+spot-checked). `tests/conftest.py` writes `results/tests.txt`, one
+deterministic line per test, skipped on partial (`-k`) runs.
+`.github/workflows/checks.yml`: a stdlib job on Python 3.10 and 3.12 and a
+full job that also runs nbmake and uploads the executed notebooks and
+logs. Badge in README. The non-uniform control fires 0 times in the
+100-case quick run, so only the over-N control is asserted there.
+
 ## 5. `examples/` and `notebooks/03_owlrl_example.ipynb`
 
 - `examples/tweety.ttl`, `examples/tweety_query.ttl`, `examples/clash.ttl` in

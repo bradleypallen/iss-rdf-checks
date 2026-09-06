@@ -1,5 +1,7 @@
 # Machine checks for *Implication-Space Semantics for RDF*
 
+[![checks](https://github.com/bradleypallen/iss-rdf-checks/actions/workflows/checks.yml/badge.svg)](https://github.com/bradleypallen/iss-rdf-checks/actions/workflows/checks.yml)
+
 Companion code for Bradley P. Allen, *Implication-Space Semantics for RDF* (working paper, University of Amsterdam, September 2026). The paper gives RDF an inferentialist semantics in the implication-space framework of Hlobil and Brandom (2025) and Hlobil (2026), and proves that, for every entailment regime presented by closure under Horn rules (false-concluding rules included), the entailment relation the fit models sanction between the contents of two graphs is exactly the one a compliant reasoner establishes by materializing the first graph and querying the result for the second.
 
 This repository contains the scripts used to check those results by computation. Nothing here is a proof; the proofs are in the paper. What the scripts do is compute both sides of each theorem literally from the paper's definitions, run them on many inputs, and confirm that they never disagree — and, as importantly, confirm that they *do* disagree when a hypothesis of the theorem is deliberately removed.
@@ -49,7 +51,11 @@ checks/
   check_theorem1.py          Theorem 1 over every bearer map onto 2 or 3 bearers.
   check_lemma1.py            Definition 3 vs rdflib SPARQL ASK (needs rdflib).
   check_owlrl.py             End to end vs owlrl materialization + ASK (needs rdflib, owlrl).
-results/                     Logs of the runs reported in the paper's ledger, and of the notebooks.
+tests/                       pytest: hand-built examples against the definitions (tweety, the clash,
+                             the Cor. 3 counterexample, ∇ shapes, Lemma 2 exhaustively on a tiny
+                             frame, N-independence) and quick subsets of every check script.
+results/                     Logs of the runs reported in the paper's ledger, of the notebooks, and
+                             of the test suite (tests.txt).
 tools/                       reproduce.sh re-creates every log in results/; compare_logs.py
                              diffs a fresh set against it (timing lines ignored).
 run_all.sh                   Reproduces the quick runs (a few minutes); see comments for the rest.
@@ -107,7 +113,7 @@ python3 check_owlrl.py 1 rdfs 300      # ~20 s
 python3 check_owlrl.py 2 owl 200       # ~15 min
 ```
 
-Seeds are the first argument; any integer works. `run_all.sh` runs the quick subset. To check that a change to the code leaves every number in the table as it is, `tools/reproduce.sh <dir> all` re-creates every log in `results/` (about 25 minutes) and `python3 tools/compare_logs.py <dir>` diffs them, ignoring timing lines only. The OWL logs were produced with owlrl 7.6.2 and `PYTHONHASHSEED=0`; the check sorts the pool it samples `H` from, so they are independent of the hash seed.
+Seeds are the first argument; any integer works. `run_all.sh` runs the quick subset. `pytest` (from the repository root, about 5 s) runs the hand-built examples and a quick subset of every check, skipping the rdflib/owlrl ones if those are not installed, and writes `results/tests.txt`; `pytest --nbmake notebooks/` re-executes the notebooks. GitHub Actions runs both on every push, on the standard library alone and with the full toolchain, and keeps the executed notebooks and logs as build artifacts. To check that a change to the code leaves every number in the table as it is, `tools/reproduce.sh <dir> all` re-creates every log in `results/` (about 25 minutes) and `python3 tools/compare_logs.py <dir>` diffs them, ignoring timing lines only. The OWL logs were produced with owlrl 7.6.2 and `PYTHONHASHSEED=0`; the check sorts the pool it samples `H` from, so they are independent of the hash seed.
 
 ## License
 

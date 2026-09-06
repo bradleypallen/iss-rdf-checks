@@ -50,6 +50,7 @@ def run(seed, n_regimes=40, n_pairs=25):
             if a != r_entails(clN, G, H):
                 st['overN'] += 1
     print(f"seed {seed}: " + ", ".join(f"{k} {v}" for k, v in st.items()))
+    return st
 
 if __name__ == '__main__':
     run(int(sys.argv[1]) if len(sys.argv) > 1 else 1)

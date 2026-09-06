@@ -61,6 +61,7 @@ def run(seed, n=3000):
         else:
             agree += 1
     print(f"seed {seed}: {n} standard-graph pairs, {ent} entailments, {agree} agreements, {n-agree} mismatches")
+    return dict(pairs=n, entail=ent, agree=agree, mismatch=n - agree)
 
 if __name__ == '__main__':
     run(int(sys.argv[1]) if len(sys.argv) > 1 else 1)
