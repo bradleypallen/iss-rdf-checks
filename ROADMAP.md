@@ -128,6 +128,13 @@ Goal: a first-time reader watches a single case happen on both sides.
   which also writes `results/walkthrough.txt`.
 - Display helpers go in `issrdf/show.py`; the notebook computes nothing itself.
 
+Outcome (6 Sept 2026): `notebooks/01_walkthrough.ipynb`, 16 cells, cases A,
+B, C1, C2, D plus two comparisons (the consistent G is not incoherent;
+the incoherent G entails an unrelated H). Executed outputs committed;
+identical across executions under different hash seeds; passes `pytest
+--nbmake`. `issrdf/show.py` added, and `content.mappings` factored out of
+`instances` (logs unchanged). Writes `results/walkthrough.txt`.
+
 ## 3. `notebooks/02_make_it_fail.ipynb` — the controls, with reasons
 
 Goal: show that the check can see errors. Three sections, each with a verdict

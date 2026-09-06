@@ -1,0 +1,9 @@
+walkthrough: universe N = ('tweety', 'Bird', 'Flier', 'type', 'subClassOf', 'disjointWith', 's'), regime rdfs9 + cax-dw
+A: ground G, ground H                    semantics True   rules True   agree
+B: blank node in H                       semantics True   rules True   agree
+C1: blank node in G, ground H            semantics False  rules False  agree
+C2: blank node in G, blank node in H     semantics True   rules True   agree
+D: incoherent G (Prop. 2)                semantics True   rules True   agree
+D': consistent G of case A, [[G]] |~ ∅   semantics False  rules False  agree
+D'': incoherent G, unrelated H           semantics True   rules True   agree
+summary: 7 cases, 0 disagreements

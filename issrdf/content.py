@@ -20,13 +20,19 @@ def ground_content(G):
     return adj_many(pos_role(t) for t in G), nabla(neg_role(t) for t in G)
 
 
+def mappings(G, U):
+    """Definition 11: the family of instance mappings μ : bnodes(G) → N, as
+    dicts, in the enumeration order fixed by U.N (product order, blank nodes
+    sorted). One empty mapping when G is ground."""
+    bn = sorted(bnodes(G))
+    return [dict(zip(bn, img)) for img in itertools.product(U.N, repeat=len(bn))]
+
+
 def instances(G, U):
     """Definition 11: the ground instances μ(G) "where μ ranges over the
     mappings bnodes(H) → N (Convention 1), a blank node in any position being
     mapped alike." For ground G the family is the single instance G."""
-    bn = sorted(bnodes(G))
-    maps = [dict(zip(bn, img)) for img in itertools.product(U.N, repeat=len(bn))]
-    return [frozenset(inst(t, m) for t in G) for m in maps]
+    return [frozenset(inst(t, m) for t in G) for m in mappings(G, U)]
 
 
 def content_pos(G, U):

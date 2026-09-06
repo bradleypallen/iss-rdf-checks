@@ -25,7 +25,13 @@ issrdf/                      The paper's definitions as code, one module per gro
   roles.py                   Def. 6 (⊔, ⊓, ∇ on generating sets, R⁺, R⁻)
   content.py                 Defs 9–11 (contents of ground and blank-node graphs)
   frame.py                   Defs 7, 8, 13–15 (the base, the frame, entailment)
+  show.py                    Display helpers for the notebooks (no definitions).
 DEFINITIONS.md               Table: every numbered definition → module.function.
+notebooks/
+  01_walkthrough.ipynb       One example (tweety, Bird, Flier; rdfs9 + cax-dw) taken through both
+                             sides with every intermediate object printed: ground graphs, a blank
+                             node in H, a blank node in G (the Skolem instance decides), an
+                             incoherent G (Proposition 2). Executed outputs are committed.
 checks/
   generate.py                Random regimes and graphs for the randomized checks.
   pruning.py                 The two monotonicity prunings (the only borrowed reasoning).
@@ -40,13 +46,13 @@ checks/
   check_theorem1.py          Theorem 1 over every bearer map onto 2 or 3 bearers.
   check_lemma1.py            Definition 3 vs rdflib SPARQL ASK (needs rdflib).
   check_owlrl.py             End to end vs owlrl materialization + ASK (needs rdflib, owlrl).
-results/                     Logs of the runs reported in the paper's ledger.
+results/                     Logs of the runs reported in the paper's ledger, and of the notebooks.
 tools/                       reproduce.sh re-creates every log in results/; compare_logs.py
                              diffs a fresh set against it (timing lines ignored).
 run_all.sh                   Reproduces the quick runs (a few minutes); see comments for the rest.
 ```
 
-The scripts import `issrdf` from the repository root (each starts with a two-line path bootstrap), so run them from `checks/` as shown below; nothing needs installing. `issrdf` and the first five scripts need only the Python standard library. The last two need `pip install -r requirements.txt` (rdflib, owlrl).
+The scripts import `issrdf` from the repository root (each starts with a two-line path bootstrap), so run them from `checks/` as shown below; nothing needs installing. `issrdf` and the first five scripts need only the Python standard library. The last two need `pip install -r requirements.txt` (rdflib, owlrl). The notebooks need `pip install -r requirements-dev.txt` and run from `notebooks/`; they import from `issrdf` and compute nothing themselves.
 
 ## What is computed from what
 

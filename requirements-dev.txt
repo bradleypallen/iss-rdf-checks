@@ -1,0 +1,8 @@
+# Notebook and test toolchain (not needed to run the checks).
+-r requirements.txt
+notebook>=7
+nbconvert>=7
+ipykernel
+nbformat
+pytest
+nbmake
