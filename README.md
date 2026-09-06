@@ -6,6 +6,20 @@ Companion code for Bradley P. Allen, *Implication-Space Semantics for RDF* (work
 
 This repository contains the scripts used to check those results by computation. Nothing here is a proof; the proofs are in the paper. What the scripts do is compute both sides of each theorem literally from the paper's definitions, run them on many inputs, and confirm that they never disagree — and, as importantly, confirm that they *do* disagree when a hypothesis of the theorem is deliberately removed.
 
+## Where to start
+
+In this order, each step assuming the one before:
+
+1. **The plain-language account** just below: what was checked, how, and what the controls are for.
+2. **[`notebooks/01_walkthrough.ipynb`](notebooks/01_walkthrough.ipynb)**: one example (tweety, Bird, Flier) taken through both sides of Theorem 2 with every intermediate object printed: the closure, the instance mappings, the generating pairs, and for each pair the reason it is or is not a good implication of the frame. Ground graphs, a blank node in `H`, a blank node in `G` (where the Skolem instance decides), and an incoherent `G` (Proposition 2).
+3. **[`notebooks/02_make_it_fail.ipynb`](notebooks/02_make_it_fail.ipynb)**: the controls. One hypothesis removed at a time (the Corollary 3 slip, a non-uniform regime, an undersized vocabulary with a real reasoner), the two sides shown disagreeing in the predicted direction, and agreement restored.
+4. **[`notebooks/03_owlrl_example.ipynb`](notebooks/03_owlrl_example.ipynb)**: the same example as Turtle files, owlrl on one side and the definitions on the other, verdicts side by side.
+5. **The definitions as code**: [`issrdf/roles.py`](issrdf/roles.py) (adjunction, symjunction, power-symjunction on generating sets) and [`issrdf/content.py`](issrdf/content.py) (contents of ground and blank-node graphs), then the rest of `issrdf/` by way of [`DEFINITIONS.md`](DEFINITIONS.md), which maps every numbered definition to its function.
+6. **The check scripts** in `checks/`, in the order of the layout below.
+7. **The results table**, which is what the paper's ledger quotes.
+
+The notebooks are committed with their outputs and render on GitHub, so steps 2–4 need nothing installed.
+
 ## What was done, in plain terms
 
 The main check asks one question many times: do the two ways of deciding whether `G` entails `H` agree? The first way is the Semantic Web's: apply the regime's rules to `G` until nothing new appears, then look for a copy of `H` in the result, or for *false*. The second way is the paper's: build `G`'s content and `H`'s content as the definitions say, combine them, and ask whether every resulting pair is a good implication of the frame the regime induces. Both are written as short programs straight from the definitions, without using any of the paper's lemmas. Then the programs are run on the same inputs and the answers compared. Two kinds of inputs are used: random small regimes and graphs, thousands of them, with blank nodes on either side; and, separately, every possible pair of small graphs over a fixed tiny vocabulary for seventy fixed regimes, so that on that universe the answer is not "no counterexample was found" but "there is none". They always agreed. The same is done for Proposition 2, comparing "`G` is incoherent in the semantics" with "the rules derive false from `G`".
@@ -17,6 +31,20 @@ The Theorem 1 check asks whether the Herbrand model is really enough. It takes a
 The Lemma 1 check asks whether the paper's definition of simple entailment is the standard one, by comparing it with rdflib's SPARQL engine on thousands of ordinary RDF graphs.
 
 The end-to-end check asks whether the paper's operational claim is true with a real tool: that recovery means "materialize, then query". It uses `owlrl`, an off-the-shelf RDFS and OWL 2 RL reasoner, on one side, and the semantics computed from the definitions on the other, on random graphs including ones built to be inconsistent.
+
+## What is computed from what
+
+The following are implemented directly from the paper's definitions, and no lemma of the paper is used in computing them:
+
+* closure `cl_R`, `R`-inconsistency and `R`-entailment (Definitions 3–4; simple entailment by searching instance mappings);
+* adjunction, symjunction and power-symjunction on generating sets of pairs (Definition 6; Hlobil 2026, Def. 10);
+* contents of ground and blank-node graphs over a fixed `N` (Definitions 10–11);
+* the base `B_R` and the frame `I_R` in the Herbrand model (Definitions 13–14);
+* content entailment as "every generating pair of `[[G]]+ ⊔ [[H]]-` lies in `I_R`" (Definition 7 together with Lemma 2; Lemma 2 itself is checked numerically on random three-bearer frames in `check_recovery.py`).
+
+Two prunings are used in the larger runs, both resting only on the fact that membership in `I_R` is monotone in both coordinates (a one-line consequence of Definition 13): the positive side of Lemma 3 may be restricted to singleton sets of instance mappings, and the negative side to one triple per mapping. `check_recovery.py` and `check_recovery_2bn.py` use no pruning.
+
+The walkthrough notebook shows each of these being computed on one example; `DEFINITIONS.md` lists, for every function, the definition its docstring quotes, and separately the three places where anything beyond a definition is used.
 
 ## Layout
 
@@ -67,18 +95,6 @@ run_all.sh                   Reproduces the quick runs (a few minutes); see comm
 
 The scripts import `issrdf` from the repository root (each starts with a two-line path bootstrap), so run them from `checks/` as shown below; nothing needs installing. `issrdf` and the first five scripts need only the Python standard library. The last two need `pip install -r requirements.txt` (rdflib, owlrl). The notebooks need `pip install -r requirements-dev.txt` and run from `notebooks/`; they import from `issrdf` and compute nothing themselves.
 
-## What is computed from what
-
-The following are implemented directly from the paper's definitions, and no lemma of the paper is used in computing them:
-
-* closure `cl_R`, `R`-inconsistency and `R`-entailment (Definitions 3–4; simple entailment by searching instance mappings);
-* adjunction, symjunction and power-symjunction on generating sets of pairs (Definition 6; Hlobil 2026, Def. 10);
-* contents of ground and blank-node graphs over a fixed `N` (Definitions 10–11);
-* the base `B_R` and the frame `I_R` in the Herbrand model (Definitions 13–14);
-* content entailment as "every generating pair of `[[G]]+ ⊔ [[H]]-` lies in `I_R`" (Definition 7 together with Lemma 2; Lemma 2 itself is checked numerically on random three-bearer frames in `check_recovery.py`).
-
-Two prunings are used in the larger runs, both resting only on the fact that membership in `I_R` is monotone in both coordinates (a one-line consequence of Definition 13): the positive side of Lemma 3 may be restricted to singleton sets of instance mappings, and the negative side to one triple per mapping. `check_recovery.py` and `check_recovery_2bn.py` use no pruning.
-
 ## Results
 
 | Check | Inputs | Outcome |
@@ -96,7 +112,9 @@ Two prunings are used in the larger runs, both resting only on the fact that mem
 | End to end vs owlrl, RDFS | 300 cases | 0 mismatches |
 | End to end vs owlrl, OWL 2 RL (with clash templates) | 3 seeds, 592 cases, 197 inconsistent | 0 mismatches; 8 cases skipped where owlrl itself crashed or exceeded 30 s |
 
-Two lessons from the runs are worth recording. The only mismatches ever seen in the owlrl run came from taking the vocabulary `V` smaller than the regime's real vocabulary (owlrl adds 106 axiomatic triples over 54 IRIs even with axiomatic triples switched off); they vanished once `V` contained those IRIs, which is the paper's admissibility hypothesis showing itself in practice. And the "instances over `N`" control is the exact failure of an earlier draft's Corollary 3, found by reading and then confirmed here.
+Two lessons from the runs are worth recording. The only mismatches ever seen in the owlrl run came from taking the vocabulary `V` smaller than the regime's real vocabulary (owlrl adds 106 axiomatic triples over 54 IRIs even with axiomatic triples switched off); they vanished once `V` contained those IRIs, which is the paper's admissibility hypothesis showing itself in practice. The smallest such case, found by a logged search (`results/undersized_V_search.txt`), is worked through in the third section of [`notebooks/02_make_it_fail.ipynb`](notebooks/02_make_it_fail.ipynb). And the "instances over `N`" control is the exact failure of an earlier draft's Corollary 3, found by reading and then confirmed here; it is the first section of the same notebook.
+
+The logs of the notebooks (`walkthrough.txt`, `make_it_fail.txt`, `owlrl_example.txt`) and of the test suite (`tests.txt`) are in `results/` alongside the logs of the runs above.
 
 ## What this does not check
 
@@ -111,7 +129,7 @@ python3 check_recovery_2bn_fast.py 1   # ~1 min
 python3 check_exhaustive.py all        # ~1 min, graphs ≤ 2
 python3 check_exhaustive.py multi 3    # ~7 min, graphs ≤ 3
 python3 check_theorem1.py 1 2          # seconds;  "1 3" takes ~1 min
-pip install rdflib owlrl
+pip install -r requirements.txt     # rdflib, owlrl (pinned)
 python3 check_lemma1.py 1              # ~6 s
 python3 check_owlrl.py 1 rdfs 300      # ~20 s
 python3 check_owlrl.py 2 owl 200       # ~15 min

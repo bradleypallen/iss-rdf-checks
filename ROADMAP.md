@@ -231,6 +231,15 @@ Link each notebook by its GitHub path so it renders in place. Move "What is
 computed from what" after the walkthrough. Update the layout block for
 `issrdf/`, `notebooks/`, `tests/`, `examples/` and `tools/`.
 
+Outcome (6 Sept 2026): README now opens with "Where to start", a
+seven-step reading order with relative links (the notebooks render on
+GitHub without installing anything), followed by the plain-language
+account, "What is computed from what" (moved up, now pointing at the
+walkthrough and DEFINITIONS.md), the layout, the results table (lessons
+paragraph linked to the two notebook sections that work the cases; the
+notebook and test logs named), what is not checked, reproducing, license.
+All relative links verified to exist.
+
 ## 7. Track the paper
 
 - **Corollary 4 (ontology-relative regimes)** when it is written: add an
