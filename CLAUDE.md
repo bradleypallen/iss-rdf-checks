@@ -20,7 +20,8 @@ independent. In particular:
 - Do not decide content entailment by "some instance mapping μ has μ(H) ⊆
   cl_R(ν(G))" on the *unpruned* paths (that is Lemma 7's proof). The pruned
   paths (`check_recovery_2bn_fast.py`, `check_exhaustive.py`, `check_owlrl.py`)
-  use exactly two facts and must not use more — see "Pruning" below.
+  use exactly two facts and must not use more — see "Pruning" below. The
+  prunings live in `checks/pruning.py`, never in `issrdf/`.
 - `check_recovery.py` and `check_recovery_2bn.py` must stay unpruned.
 
 If a refactor makes a check faster by making it less independent, it is wrong.
@@ -63,30 +64,46 @@ If a refactor makes a check faster by making it less independent, it is wrong.
   false-concluding rules. **Cor. 4 (planned)**: ontology-relative regimes,
   R_O = R ∪ {⟨∅, t⟩ : t ∈ O}, O ground; cl_{R_O}(X) = cl_R(X ∪ O).
 
-## Code ↔ definition map (`checks/check_recovery.py`)
+## Code ↔ definition map
 
-| Function | Implements |
+The definitions live in the `issrdf` package, one module per group; the full
+table with quoted definitions is `DEFINITIONS.md`.
+
+| Module / function | Implements |
 |---|---|
-| `make_closure(R)` → `closure(X)` | cl_R (Def. 4); instances over terms(X) ∪ V |
-| `simply_entails(X, H)` | Def. 3 |
-| `r_inconsistent`, `r_entails` | Def. 4 |
-| `adj`, `adj_iter` | ⊔ (Def. 6) on generating sets; `adj_many([])` = unit `{⟨∅,∅⟩}` |
-| `symj` | ⊓ (Def. 6) |
-| `nabla` | ∇ (Hlobil 2026 Def. 10) |
-| `pos_role`, `neg_role` | 𝓡⁺(𝔅t), 𝓡⁻(𝔅t) |
-| `ground_content` | Def. 10 |
-| `instances`, `content_pos`, `content_neg` | Def. 11 |
-| `make_good(closure)` → `good(pair)` | membership in 𝕀_R (Defs 13–14, Herbrand) |
-| `iss_entails`, `iss_incoherent` | Def. 7 via Lemma 2 |
-| `gen_regime` | random Def.-4 regimes (schemas, no side conditions ⇒ uniform) |
-| `make_closure(R, universe=N)` | **control**: the Cor. 3 slip (breaks uniformity) |
-| `make_closure(R, bnode_only=True)` | **control**: a non-uniform regime |
+| `issrdf.universe.Universe` | Convention 1: `V`, `INDIV`, `SPARE`, `BN_G`, `BN_H`; `N = INDIV + V + SPARE` |
+| `Universe.admissible(G, H)` | Def. 12 (a method, not a constructor assertion: Theorem 1 does not assume it) |
+| `issrdf.regime.make_closure(R, V)` → `closure(X)` | cl_R (Def. 4); instances over terms(X) ∪ V |
+| `regime.simply_entails(X, H)` | Def. 3 |
+| `regime.r_inconsistent`, `regime.r_entails` | Def. 4 |
+| `issrdf.roles.adj`, `adj_iter`, `adj_many` | ⊔ (Def. 6) on generating sets; `adj_many([])` = unit `{⟨∅,∅⟩}` |
+| `roles.symj` | ⊓ (Def. 6) |
+| `roles.nabla` | ∇ (Hlobil 2026 Def. 10) |
+| `roles.pos_role`, `roles.neg_role` | 𝓡⁺(𝔅t), 𝓡⁻(𝔅t) |
+| `issrdf.content.ground_content` | Def. 10 |
+| `content.instances(G, U)`, `content_pos`, `content_neg` | Def. 11 |
+| `issrdf.frame.make_good(closure)` → `good(pair)` | membership in 𝕀_R (Defs 8, 13–15, Herbrand) |
+| `frame.iss_entails(good, G, H, U)`, `frame.iss_incoherent(good, G, U)` | Def. 7 via Lemma 2 |
+| `frame.rsr(S, I, F)` | RSR (Def. 6), for the numerical Lemma 2 check |
+| `checks/generate.py: gen_regime(rng, n, U)`, `gen_graph` | random Def.-4 regimes (schemas, no side conditions ⇒ uniform) and graphs; not definitions, so outside the package |
+| `checks/pruning.py: pos_singletons`, `neg_minimal` | the two prunings (below); outside the package on purpose |
+| `make_closure(R, V, instances_over=U.N)` | **control**: the Cor. 3 slip (breaks uniformity) |
+| `make_closure(R, V, bnode_only=True)` | **control**: a non-uniform regime |
 
 Conventions: blank nodes are strings starting with `_`; `BOT = 'BOT'` is ⊥;
-variables in schemas are `'X','Y','Z'`; `V`, `INDIV`, `SPARE`, `N`, `BN_G`,
-`BN_H` are module globals that other scripts override (`import check_recovery
-as C; C.N = ...`) — keep that pattern or replace it with explicit parameters
-everywhere at once, not piecemeal.
+variables in schemas are `'X','Y','Z'`. The universe is an explicit
+`Universe` value passed to the functions that need one (`make_closure` reads
+`V`; `instances`, the content functions and the entailment tests read `N`;
+the generators read `INDIV` and `V`); nothing reads module globals. Each
+check script defines its own `U` at the top. The scripts start with a
+two-line `sys.path` bootstrap so they run as `python3 check_x.py <seed>`
+from `checks/` without installing anything, and can also be imported as
+`checks.check_x` by the tests.
+
+Verification of any change to `issrdf/` or `checks/`: `tools/reproduce.sh
+<dir> full` then `python3 tools/compare_logs.py <dir>`; every log in
+`results/` must reproduce (see ROADMAP.md item 0 for what "reproduce" means
+for the OWL logs).
 
 ## Pruning (the only reasoning the pruned checks borrow)
 
@@ -118,7 +135,7 @@ See README table. If a configuration changes, rerun and update the table and
 
 ## Style
 
-Python ≥ 3.10, standard library only except `check_lemma1.py`/`check_owlrl.py`
-(rdflib, owlrl). Keep scripts runnable as `python3 script.py <seed> ...` from
+Python ≥ 3.10, standard library only in `issrdf/` and in the checks except
+`check_lemma1.py`/`check_owlrl.py` (rdflib, owlrl). Keep scripts runnable as `python3 script.py <seed> ...` from
 `checks/`. Deterministic given the seed. Print a one-line summary at the end of
 every run in the existing format; the logs in `results/` are parsed by eye.

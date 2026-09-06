@@ -7,7 +7,7 @@
 #   quick  : everything under ~2 min each (run_*, fast_*, exhaustive_2, theorem1
 #            2-bearer rows, run2bn_*, lemma1)                       [default]
 #   full   : quick plus exhaustive_3_multi and the theorem1 3-bearer row
-#   owl    : the three check_owlrl.py OWL runs (~7 min each). Run these on an
+#   owl    : the three check_owlrl.py OWL runs (~7 min each) and the RDFS run. Run these on an
 #            otherwise idle machine: the 30 s per-case timeout is wall-clock,
 #            so CPU contention can change the recorded timeout count.
 #            PYTHONHASHSEED is pinned for these: check_owlrl.py samples H from
@@ -42,6 +42,7 @@ wait
 if [ "$MODE" = owl ] || [ "$MODE" = all ]; then
   export PYTHONHASHSEED=0
   for s in 2 3 4; do run owl_$s.txt check_owlrl.py $s owl 200; done
+  run rdfs_1.txt check_owlrl.py 1 rdfs 300
   wait
 fi
 echo "done: $(ls "$OUT"/*.txt | wc -l | tr -d ' ') logs in $OUT"

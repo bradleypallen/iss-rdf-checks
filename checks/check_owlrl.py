@@ -120,6 +120,7 @@ def run(seed, owl, n_cases):
             g, _ = close(G, sem)
             pool = [t for t in g if not isinstance(t[2], BNode) or t[2] in {BX}]
             pool = [t for t in pool if t[1] in (PRED_OWL if owl else PRED_RDFS)] or list(g)
+            pool = sorted(pool, key=str)             # rdflib's iteration order is hash-seed dependent
             H = set(rng.sample(pool, min(len(pool), rng.randint(1, 2))))
             if rng.random() < 0.6 and H:               # blank out one term
                 (a_, b_, c_) = rng.choice(sorted(H, key=str)); H.discard((a_, b_, c_))

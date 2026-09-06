@@ -1,22 +1,22 @@
-[OWL seed 4] {'cases': 10, 'entail': 8, 'inconsistent': 4, 'bnG': 8, 'bnH': 5, 'mismatch': 0} 19s
-[OWL seed 4] {'cases': 20, 'entail': 14, 'inconsistent': 8, 'bnG': 15, 'bnH': 8, 'mismatch': 0} 31s
-[OWL seed 4] {'cases': 30, 'entail': 22, 'inconsistent': 10, 'bnG': 21, 'bnH': 14, 'mismatch': 0} 44s
-[OWL seed 4] {'cases': 40, 'entail': 28, 'inconsistent': 11, 'bnG': 26, 'bnH': 18, 'mismatch': 0} 53s
-[OWL seed 4] {'cases': 50, 'entail': 37, 'inconsistent': 15, 'bnG': 33, 'bnH': 24, 'mismatch': 0} 69s
-[OWL seed 4] {'cases': 60, 'entail': 46, 'inconsistent': 19, 'bnG': 39, 'bnH': 28, 'mismatch': 0} 83s
-[OWL seed 4] {'cases': 70, 'entail': 54, 'inconsistent': 24, 'bnG': 46, 'bnH': 32, 'mismatch': 0} 98s
-[OWL seed 4] {'cases': 80, 'entail': 61, 'inconsistent': 25, 'bnG': 53, 'bnH': 38, 'mismatch': 0} 115s
-[OWL seed 4] {'cases': 90, 'entail': 67, 'inconsistent': 29, 'bnG': 59, 'bnH': 42, 'mismatch': 0} 126s
-[OWL seed 4] {'cases': 100, 'entail': 73, 'inconsistent': 32, 'bnG': 67, 'bnH': 46, 'mismatch': 0} 142s
-[OWL seed 4] {'cases': 110, 'entail': 79, 'inconsistent': 34, 'bnG': 75, 'bnH': 50, 'mismatch': 0} 156s
-TIMEOUT [(rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#FunctionalProperty')), (rdflib.term.URIRef('http://ex.org/D'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#SymmetricProperty'))] [(rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#NCName'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#Datatype'))]
-[OWL seed 4] {'cases': 119, 'entail': 85, 'inconsistent': 36, 'bnG': 84, 'bnH': 54, 'mismatch': 0, 'timeout': 1} 202s
-[OWL seed 4] {'cases': 129, 'entail': 93, 'inconsistent': 41, 'bnG': 92, 'bnH': 59, 'mismatch': 0, 'timeout': 1} 216s
-[OWL seed 4] {'cases': 139, 'entail': 100, 'inconsistent': 44, 'bnG': 98, 'bnH': 63, 'mismatch': 0, 'timeout': 1} 227s
-[OWL seed 4] {'cases': 149, 'entail': 108, 'inconsistent': 47, 'bnG': 106, 'bnH': 66, 'mismatch': 0, 'timeout': 1} 243s
-[OWL seed 4] {'cases': 159, 'entail': 114, 'inconsistent': 49, 'bnG': 109, 'bnH': 73, 'mismatch': 0, 'timeout': 1} 248s
-[OWL seed 4] {'cases': 169, 'entail': 123, 'inconsistent': 53, 'bnG': 116, 'bnH': 78, 'mismatch': 0, 'timeout': 1} 266s
-[OWL seed 4] {'cases': 179, 'entail': 131, 'inconsistent': 55, 'bnG': 120, 'bnH': 83, 'mismatch': 0, 'timeout': 1} 275s
-[OWL seed 4] {'cases': 189, 'entail': 140, 'inconsistent': 60, 'bnG': 127, 'bnH': 91, 'mismatch': 0, 'timeout': 1} 294s
-[OWL seed 4] {'cases': 199, 'entail': 149, 'inconsistent': 65, 'bnG': 133, 'bnH': 96, 'mismatch': 0, 'timeout': 1} 308s
-DONE {'cases': 199, 'entail': 149, 'inconsistent': 65, 'bnG': 133, 'bnH': 96, 'mismatch': 0, 'timeout': 1}
+[OWL seed 4] {'cases': 10, 'entail': 8, 'inconsistent': 4, 'bnG': 8, 'bnH': 5, 'mismatch': 0} 12s
+[OWL seed 4] {'cases': 20, 'entail': 14, 'inconsistent': 8, 'bnG': 15, 'bnH': 8, 'mismatch': 0} 20s
+[OWL seed 4] {'cases': 30, 'entail': 22, 'inconsistent': 10, 'bnG': 21, 'bnH': 14, 'mismatch': 0} 28s
+[OWL seed 4] {'cases': 40, 'entail': 28, 'inconsistent': 11, 'bnG': 26, 'bnH': 18, 'mismatch': 0} 34s
+[OWL seed 4] {'cases': 50, 'entail': 37, 'inconsistent': 15, 'bnG': 33, 'bnH': 24, 'mismatch': 0} 44s
+[OWL seed 4] {'cases': 60, 'entail': 46, 'inconsistent': 19, 'bnG': 39, 'bnH': 28, 'mismatch': 0} 53s
+[OWL seed 4] {'cases': 70, 'entail': 54, 'inconsistent': 24, 'bnG': 46, 'bnH': 32, 'mismatch': 0} 63s
+[OWL seed 4] {'cases': 80, 'entail': 61, 'inconsistent': 25, 'bnG': 53, 'bnH': 38, 'mismatch': 0} 74s
+[OWL seed 4] {'cases': 90, 'entail': 67, 'inconsistent': 29, 'bnG': 59, 'bnH': 43, 'mismatch': 0} 81s
+[OWL seed 4] {'cases': 100, 'entail': 73, 'inconsistent': 32, 'bnG': 67, 'bnH': 47, 'mismatch': 0} 92s
+[OWL seed 4] {'cases': 110, 'entail': 79, 'inconsistent': 34, 'bnG': 75, 'bnH': 51, 'mismatch': 0} 100s
+TIMEOUT [(rdflib.term.BNode('x'), rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#range'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#FunctionalProperty')), (rdflib.term.URIRef('http://ex.org/D'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#SymmetricProperty'))] [(rdflib.term.URIRef('http://www.w3.org/2002/07/owl#priorVersion'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#sameAs'), rdflib.term.URIRef('http://www.w3.org/2002/07/owl#priorVersion'))]
+[OWL seed 4] {'cases': 119, 'entail': 85, 'inconsistent': 36, 'bnG': 84, 'bnH': 55, 'mismatch': 0, 'timeout': 1} 141s
+[OWL seed 4] {'cases': 129, 'entail': 93, 'inconsistent': 41, 'bnG': 92, 'bnH': 60, 'mismatch': 0, 'timeout': 1} 153s
+[OWL seed 4] {'cases': 139, 'entail': 100, 'inconsistent': 44, 'bnG': 98, 'bnH': 64, 'mismatch': 0, 'timeout': 1} 162s
+[OWL seed 4] {'cases': 149, 'entail': 108, 'inconsistent': 47, 'bnG': 106, 'bnH': 66, 'mismatch': 0, 'timeout': 1} 173s
+[OWL seed 4] {'cases': 159, 'entail': 114, 'inconsistent': 49, 'bnG': 109, 'bnH': 73, 'mismatch': 0, 'timeout': 1} 177s
+[OWL seed 4] {'cases': 169, 'entail': 123, 'inconsistent': 53, 'bnG': 116, 'bnH': 77, 'mismatch': 0, 'timeout': 1} 191s
+[OWL seed 4] {'cases': 179, 'entail': 131, 'inconsistent': 55, 'bnG': 120, 'bnH': 82, 'mismatch': 0, 'timeout': 1} 197s
+[OWL seed 4] {'cases': 189, 'entail': 140, 'inconsistent': 60, 'bnG': 127, 'bnH': 90, 'mismatch': 0, 'timeout': 1} 211s
+[OWL seed 4] {'cases': 199, 'entail': 149, 'inconsistent': 65, 'bnG': 133, 'bnH': 95, 'mismatch': 0, 'timeout': 1} 222s
+DONE {'cases': 199, 'entail': 149, 'inconsistent': 65, 'bnG': 133, 'bnH': 95, 'mismatch': 0, 'timeout': 1}

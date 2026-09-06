@@ -88,6 +88,13 @@ Design points:
   logs: rerun `owl_2`, `owl_3`, `owl_4` and the RDFS run, replace them in
   `results/`, and fix the README's OWL case count at the same time.
 
+Outcome (6 Sept 2026): done in one commit. All 15 stdlib/rdflib logs
+reproduce exactly (`tools/compare_logs.py`). `check_owlrl.py` now sorts the
+pool by string; the OWL logs were regenerated (same 592 cases, 197
+inconsistent, 8 skipped; `bnH` and one `entail` count moved with the
+re-sampled H) and verified identical under three hash seeds; `rdfs_1.txt`
+added (300 cases, 0 mismatches). README's OWL row corrected to 592 cases.
+
 Do it in one commit, all scripts at once. Before merging, rerun `run_1–5`,
 `fast_1–4`, `exhaustive_2`, `exhaustive_3_multi`, `theorem1` (2 and 3
 bearers), `run2bn_4`, `run2bn_9` and `lemma1`, and verify every number with

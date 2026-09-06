@@ -12,13 +12,16 @@ Theorem 1 claims: G |~ H in the Herbrand model  iff  G |~ H in every fit model.
   'only if' (Herbrand ⇒ every fit model): tested for every 𝔅.
   'if'      (every fit model ⇒ Herbrand): Herbrand is itself fit (identity 𝔅),
             so it is the identity map's row of the same test.
-Contents by Defs 10/11 with the model's bearer map; blank nodes allowed."""
-import itertools, random, sys
-import check_recovery as C
+Contents by Defs 10/11 with the model's bearer map; blank nodes allowed.
+Theorem 1 does not assume Definition 12, and this universe has no spare IRI."""
+import os, sys
+_HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.dirname(_HERE), _HERE]
+import itertools, random
+from issrdf import Universe, nabla, adj_many, adj, instances
+from generate import gen_graph
 
-C.V = ('p',); C.INDIV = ('a',); C.SPARE = (); C.N = ('a', 'p')
-C.BN_G = ('_x',); C.BN_H = ('_y',)
-TRIPLES = [t for t in itertools.product(C.N, repeat=3)]
+U = Universe(V=('p',), INDIV=('a',), SPARE=(), BN_G=('_x',), BN_H=('_y',))   # N = (a, p)
+TRIPLES = [t for t in itertools.product(U.N, repeat=3)]
 E = frozenset()
 
 def subsets(xs):
@@ -35,9 +38,9 @@ def content_pairs(G, H, bmap):
     """Generating pairs of [[G]]+ ⊔ [[H]]- in a model with bearer map bmap (Defs 10, 11)."""
     def pos(t): return frozenset({(frozenset({bmap[t]}), E)})
     def neg(t): return frozenset({(E, frozenset({bmap[t]}))})
-    P = C.nabla(C.adj_many(pos(t) for t in sorted(g)) for g in C.instances(G))
-    Nn = C.adj_many(C.nabla(neg(t) for t in sorted(h)) for h in C.instances(H))
-    return C.adj(P, Nn)
+    P = nabla(adj_many(pos(t) for t in sorted(g)) for g in instances(G, U))
+    Nn = adj_many(nabla(neg(t) for t in sorted(h)) for h in instances(H, U))
+    return adj(P, Nn)
 
 def run(seed, nbearers, n_bases=3, n_graphs=10):
     rng = random.Random(seed)
@@ -49,8 +52,8 @@ def run(seed, nbearers, n_bases=3, n_graphs=10):
     for _ in range(n_bases):
         B = random_base(rng, rng.choice([0.05, 0.2, 0.5]))
         I_herb = lambda p: bool(p[0] & p[1]) or p in B          # Def 14: I_C ∪ B
-        graphs = [C.gen_graph(rng, rng.randint(0, 2), C.BN_G) for _ in range(n_graphs)]
-        hs = [C.gen_graph(rng, rng.randint(0, 2), C.BN_H) for _ in range(n_graphs)]
+        graphs = [gen_graph(rng, rng.randint(0, 2), U.BN_G, U) for _ in range(n_graphs)]
+        hs = [gen_graph(rng, rng.randint(0, 2), U.BN_H, U) for _ in range(n_graphs)]
         yes = [(G, H) for G in graphs for H in hs
                if all(I_herb(p) for p in content_pairs(G, H, ident))]
         herb_yes += len(yes)

@@ -6,10 +6,11 @@ For STANDARD graphs, simple entailment in the sense of Hayes & Patel-Schneider
 pattern is H with each blank node replaced by a variable succeeds over G.
 rdflib's SPARQL engine is the reference here; our `simply_entails` (Def 3,
 instance-mapping search) is what is being tested."""
-import random, sys, itertools
-import rdflib
+import os, sys
+_HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.dirname(_HERE), _HERE]
+import random
 from rdflib import Graph, URIRef, BNode, Literal
-import check_recovery as C
+from issrdf import simply_entails
 
 EX = "http://ex.org/"
 IRIS = ['a', 'b', 'p', 'q']
@@ -53,7 +54,7 @@ def run(seed, n=3000):
     for i in range(n):
         G = gen_standard(rng, rng.randint(0, 4), ['_x', '_y'])
         H = gen_standard(rng, rng.randint(0, 3), ['_u', '_v'])
-        a = C.simply_entails(G, H); b = sparql_entails(G, H)
+        a = simply_entails(G, H); b = sparql_entails(G, H)
         ent += b
         if a != b:
             print("LEMMA 1 / DEF 3 MISMATCH", sorted(G), sorted(H), a, b)

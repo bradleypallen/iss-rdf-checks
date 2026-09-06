@@ -19,7 +19,16 @@ The end-to-end check asks whether the paper's operational claim is true with a r
 ## Layout
 
 ```
+issrdf/                      The paper's definitions as code, one module per group:
+  universe.py                Convention 1, Def. 12 (the fragment N, admissibility)
+  regime.py                  Defs 1–4 (triples, simple entailment, regimes, cl_R)
+  roles.py                   Def. 6 (⊔, ⊓, ∇ on generating sets, R⁺, R⁻)
+  content.py                 Defs 9–11 (contents of ground and blank-node graphs)
+  frame.py                   Defs 7, 8, 13–15 (the base, the frame, entailment)
+DEFINITIONS.md               Table: every numbered definition → module.function.
 checks/
+  generate.py                Random regimes and graphs for the randomized checks.
+  pruning.py                 The two monotonicity prunings (the only borrowed reasoning).
   check_recovery.py          Theorem 2 / Lemma 7 and Proposition 2, random cases, one blank node
                              each side, Lemma 3's pairs enumerated in full; Lemma 2 on random
                              tiny frames; the two negative controls.
@@ -32,10 +41,12 @@ checks/
   check_lemma1.py            Definition 3 vs rdflib SPARQL ASK (needs rdflib).
   check_owlrl.py             End to end vs owlrl materialization + ASK (needs rdflib, owlrl).
 results/                     Logs of the runs reported in the paper's ledger.
+tools/                       reproduce.sh re-creates every log in results/; compare_logs.py
+                             diffs a fresh set against it (timing lines ignored).
 run_all.sh                   Reproduces the quick runs (a few minutes); see comments for the rest.
 ```
 
-All scripts except `check_recovery.py` import it from the same directory, so run them from `checks/`. The first four need only the Python standard library. The last two need `pip install rdflib owlrl`.
+The scripts import `issrdf` from the repository root (each starts with a two-line path bootstrap), so run them from `checks/` as shown below; nothing needs installing. `issrdf` and the first five scripts need only the Python standard library. The last two need `pip install -r requirements.txt` (rdflib, owlrl).
 
 ## What is computed from what
 
@@ -64,7 +75,7 @@ Two prunings are used in the larger runs, both resting only on the fact that mem
 | Theorem 1, every bearer map onto 3 bearers | 6,561 maps, 113 cases, 741,393 checks | 0 violations |
 | Lemma 1 / Def. 3 vs rdflib SPARQL | 3,000 standard-graph pairs | 0 mismatches |
 | End to end vs owlrl, RDFS | 300 cases | 0 mismatches |
-| End to end vs owlrl, OWL 2 RL (with clash templates) | 742 cases, 197 inconsistent | 0 mismatches; 8 cases skipped where owlrl itself crashed or exceeded 30 s |
+| End to end vs owlrl, OWL 2 RL (with clash templates) | 3 seeds, 592 cases, 197 inconsistent | 0 mismatches; 8 cases skipped where owlrl itself crashed or exceeded 30 s |
 
 Two lessons from the runs are worth recording. The only mismatches ever seen in the owlrl run came from taking the vocabulary `V` smaller than the regime's real vocabulary (owlrl adds 106 axiomatic triples over 54 IRIs even with axiomatic triples switched off); they vanished once `V` contained those IRIs, which is the paper's admissibility hypothesis showing itself in practice. And the "instances over `N`" control is the exact failure of an earlier draft's Corollary 3, found by reading and then confirmed here.
 
@@ -87,7 +98,7 @@ python3 check_owlrl.py 1 rdfs 300      # ~20 s
 python3 check_owlrl.py 2 owl 200       # ~15 min
 ```
 
-Seeds are the first argument; any integer works. `run_all.sh` runs the quick subset.
+Seeds are the first argument; any integer works. `run_all.sh` runs the quick subset. To check that a change to the code leaves every number in the table as it is, `tools/reproduce.sh <dir> all` re-creates every log in `results/` (about 25 minutes) and `python3 tools/compare_logs.py <dir>` diffs them, ignoring timing lines only. The OWL logs were produced with owlrl 7.6.2 and `PYTHONHASHSEED=0`; the check sorts the pool it samples `H` from, so they are independent of the hash seed.
 
 ## License
 
