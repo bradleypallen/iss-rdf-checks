@@ -1,3 +1,5 @@
-# Only needed for check_lemma1.py and check_owlrl.py
+# Only needed for check_lemma1.py and check_owlrl.py.
+# The logs in results/ were produced with owlrl 7.6 (check_owlrl.py docstring);
+# owlrl is pinned because its crash/timeout behaviour is part of the record.
 rdflib>=7.0
-owlrl>=7.0
+owlrl==7.6.2
