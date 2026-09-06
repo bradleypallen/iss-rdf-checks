@@ -1,0 +1,5 @@
+# H: is something a Flier?  (a blank node in the query; Definition 11's instances over N)
+@prefix ex:  <http://ex.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+[] rdf:type ex:Flier .

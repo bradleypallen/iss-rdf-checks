@@ -1,0 +1,10 @@
+# G: tweety.ttl plus Bird and Flier disjoint. OWL 2 RL's cax-dw derives false:
+# the graph is inconsistent, and in the semantics its content is incoherent (Proposition 2).
+@prefix ex:   <http://ex.org/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+ex:tweety rdf:type ex:Bird .
+ex:Bird rdfs:subClassOf ex:Flier .
+ex:Bird owl:disjointWith ex:Flier .

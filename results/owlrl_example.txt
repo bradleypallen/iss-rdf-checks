@@ -1,0 +1,6 @@
+1: tweety, ground query                  semantics True   owlrl True   agree
+2: tweety, blank-node query              semantics True   owlrl True   agree
+3: tweety, non-entailed query            semantics False  owlrl False  agree
+4: clash, incoherent (Prop. 2)           semantics True   owlrl True   agree
+5: clash, non-entailed query             semantics True   owlrl True   agree
+summary: 5 cases, 0 disagreements

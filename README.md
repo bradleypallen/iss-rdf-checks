@@ -37,6 +37,10 @@ notebooks/
   02_make_it_fail.ipynb      The controls: the Corollary 3 slip, a non-uniform regime, and owlrl
                              with an undersized V; each hypothesis removed, the disagreement
                              shown with its reason, and agreement restored.
+  03_owlrl_example.ipynb     The Turtle files below through owlrl (materialize, then ASK) and through
+                             the definitions, verdicts side by side: entailed, blank-node and
+                             non-entailed queries, the clash, and explosion.
+examples/                    tweety.ttl, tweety_query.ttl, tweety_query_bnode.ttl, clash.ttl.
 checks/
   generate.py                Random regimes and graphs for the randomized checks.
   pruning.py                 The two monotonicity prunings (the only borrowed reasoning).

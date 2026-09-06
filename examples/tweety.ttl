@@ -1,0 +1,7 @@
+# G: tweety is a Bird, and Birds are Fliers (the paper's example, question 2).
+@prefix ex:   <http://ex.org/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:tweety rdf:type ex:Bird .
+ex:Bird rdfs:subClassOf ex:Flier .

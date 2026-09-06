@@ -212,6 +212,16 @@ logs. Badge in README. The non-uniform control fires 0 times in the
   side for the entailment case and the clash case. Last cell writes
   `results/owlrl_example.txt`.
 
+Outcome (6 Sept 2026): four Turtle files (a blank-node query added) and
+`notebooks/03_owlrl_example.ipynb`, 10 cells, five cases (ground query,
+blank-node query, non-entailed query, the clash under Proposition 2, and
+explosion from the clash); all agree. rdflib gives blank nodes a random
+label per parse, so the term conversion renames them `_x`, `_y`, ... in
+order of appearance; outputs are identical across hash seeds. The notebook
+says explicitly that its semantics' side uses the two-rule fragment and
+that the full rule set's agreement is `check_owlrl.py`'s business. Passes
+nbmake with the other two; prints a skip line without rdflib/owlrl.
+
 ## 6. README reading order
 
 Add at the top: plain-language account → `notebooks/01_walkthrough.ipynb` →
