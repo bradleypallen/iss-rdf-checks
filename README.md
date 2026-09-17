@@ -1,4 +1,4 @@
-# Machine checks for *Implication-Space Semantics for RDF*
+# Machine checks for implication-space semantics for RDF
 
 [![checks](https://github.com/bradleypallen/iss-rdf-checks/actions/workflows/checks.yml/badge.svg)](https://github.com/bradleypallen/iss-rdf-checks/actions/workflows/checks.yml)
 
